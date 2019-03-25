@@ -104,7 +104,7 @@ button:focus {outline:0;}
 button:active{background-color: #443729;}
 
 .result>img{
-    max-width: 325px;
+    max-width: 125px;
     grid-area: i;
     box-shadow: 1px 1px 3px black;
     border-radius: 5px;
@@ -158,4 +158,16 @@ button:active{background-color: #443729;}
     padding: 10px;
     border-radius: 5px;
     font-family: 'Raleway', sans-serif;
+}
+
+.fa-parking{
+    font-size: 30px;
+}
+
+li{
+    display: inline-block;
+}
+
+span{
+    display: inline-block;
 }

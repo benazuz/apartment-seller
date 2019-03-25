@@ -8,6 +8,7 @@
         crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 
 <body>
@@ -35,12 +36,33 @@
 
     <div id="results"></div>
 
-    <!-- Your Code Here -->
-    <!-- You should start doing handlebar stuff here -->
-    <!-- Your Code Here -->
+    <script id="results-template" type="text/x-handlebars-template">
+    <div>
+        {{#if apartments}}
+        {{#each apartments}}
+
+        {{#if immediate}}
+        <div class="result">
+                <p><img src="{{img}}" height="100" width="100"> </br> {{contactDetails.name}} </br> {{contactDetails.email}} </br> {{formatNumber price style="currency" currency="USD"}} </br>
+            {{#each features}}
+             Features: {{this}}
+             {{/each}}</p>
+        {{/if}}
+
+        {{#if parking}}
+        <span><i class="fas fa-parking"></i></span>
+        </div>
+        {{/if}}
+    {{/each}}
+    {{else}}
+    <span>No results!</span>
+    {{/if}}
+    </div>
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+    <script src="handlebars-intl/dist/handlebars-intl.min.js"></script>
     <script src="apt-data.js"></script>
     <script src="apt-filter.js"></script>
     <script src="main.js"></script>
